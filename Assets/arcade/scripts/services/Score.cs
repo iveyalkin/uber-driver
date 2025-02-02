@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.Serialization;
 
 namespace iv.arcade.uberdriver
 {
@@ -13,7 +12,7 @@ namespace iv.arcade.uberdriver
 
         private void OnEnable() => ResetScore();
 
-        public void AddCurrentScore(int value)
+        public void AddScore(int value)
         {
             CurrentScore += Mathf.Abs(value);
             onScoreChanged.Invoke(CurrentScore);

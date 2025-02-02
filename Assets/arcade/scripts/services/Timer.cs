@@ -44,6 +44,11 @@ namespace iv.arcade.uberdriver
             IsPause = true;
         }
 
+        public void Unpause()
+        {
+            IsPause = false;
+        }
+
         private async void StartTimer(CancellationToken cancellationToken)
         {
             try
