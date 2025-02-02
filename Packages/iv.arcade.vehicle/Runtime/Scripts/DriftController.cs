@@ -32,7 +32,7 @@ namespace IV.Arcade.Vehicle
         {
             var isRecovered = true;
             state.isTractionLocked = false;
-            state.driftingAxis -= Mathf.Max(0f, state.driftingAxis - Time.deltaTime / 1.5f);
+            state.driftingAxis = Mathf.Max(0f, state.driftingAxis - Time.deltaTime);
 
             // wait for front (or should be all?) wheels to recover
             foreach (var wheel in state.wheelsState.frontAxis)
