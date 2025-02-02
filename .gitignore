@@ -54,3 +54,6 @@ crashlytics-build.properties
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+#ignore UPM credentials
+.upmconfig.toml

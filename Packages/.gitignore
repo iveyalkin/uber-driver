@@ -1,1 +1,6 @@
+# ignore upm packages that has theis own repositories
 uber-driver.content
+
+# UPM
+# force to resolve packages independenly on CI
+packages-lock.json
