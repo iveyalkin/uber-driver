@@ -25,10 +25,12 @@ namespace IV.Arcade.Vehicle
         public float driftingAxis;
 
         private float speedSqr;
+        private Vector3 localVelocity;
         private Vector3 velocity;
 
         public readonly WheelsState wheelsState;
         private readonly Rigidbody rigidbody;
+        private readonly Transform physicsTransform;
 
         public float Rpm => rpm;
         public bool IsDrifting => isDrifting;
@@ -40,24 +42,33 @@ namespace IV.Arcade.Vehicle
 
         public float SpeedSqr => speedSqr;
 
+        public Vector3 LocalVelocity => localVelocity;
+
         public Vector3 Velocity
         {
-            get => rigidbody.linearVelocity;
+            get => velocity;
             set
             {
-                velocity = value;
-                speedSqr = velocity.sqrMagnitude;
-                rigidbody.linearVelocity = velocity;
+                SetVelocityInternal(value);
+                rigidbody.linearVelocity = value;
             }
         }
 
+        private void SetVelocityInternal(Vector3 value)
+        {
+            velocity = value;
+            localVelocity = physicsTransform.InverseTransformDirection(value);
+            speedSqr = velocity.sqrMagnitude;
+        }
+
         // check velocity against some threshold
-        public bool IsGoingBackward() => velocity.z <= 1f;
-        public bool IsGoingForward() => velocity.z >= -1f;
+        public bool IsGoingBackward() => localVelocity.z <= 1f;
+        public bool IsGoingForward() => localVelocity.z >= -1f;
 
         public CarState(Rigidbody rigidbody, WheelsState wheelsState)
         {
             this.rigidbody = rigidbody;
+            this.physicsTransform = rigidbody.transform;
             this.wheelsState = wheelsState;
         }
 
@@ -73,7 +84,8 @@ namespace IV.Arcade.Vehicle
 
             this.rpm = rpm >= rpmThreshold ? rpm : 0f;
             this.speedometerKph = (int)(wheelsState.radius * rpm * rpmToSpeedKph + .5f); // round up to int
-            this.Velocity = rigidbody.linearVelocity;
+
+            SetVelocityInternal(rigidbody.linearVelocity);
         }
 
         public readonly struct WheelsState

@@ -20,7 +20,7 @@ namespace IV.Arcade.Vehicle
         {
             // the car lost its traction if the forces applied to the 'x' asis are greater than
             // 2.5f. if so, the car will start emitting drifting vfx
-            state.isDrifting = Mathf.Abs(state.Velocity.x) > 2.5f;
+            state.isDrifting = Mathf.Abs(state.LocalVelocity.x) > 2.5f;
             Drift();
         }
 
@@ -93,7 +93,7 @@ namespace IV.Arcade.Vehicle
             foreach (var wheel in state.wheelsState.all)
                 wheel.ToggleDriftVfx(state.isDrifting);
 
-            var isSkidding = (state.isTractionLocked || Mathf.Abs(state.Velocity.x) > 5f) && state.speedometerKph > 12;
+            var isSkidding = (state.isTractionLocked || Mathf.Abs(state.LocalVelocity.x) > 5f) && state.speedometerKph > 12;
 
             foreach (var wheel in state.wheelsState.all)
                 wheel.ToggleSkidVfx(isSkidding);
