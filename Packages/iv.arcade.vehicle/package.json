@@ -1,0 +1,8 @@
+{
+  "name": "iv.arcade.vehicle",
+  "version": "0.0.1",
+  "description": "Arcade Vehicle system",
+  "dependencies": {
+    "com.unity.inputsystem": "1.11.2"
+  }
+}

@@ -1,0 +1,18 @@
+{
+    "name": "IV.Core.Editor",
+    "rootNamespace": "",
+    "references": [
+        "GUID:abda7f34bba2cb646b770d4f9339f5c8"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

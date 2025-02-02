@@ -1,0 +1,8 @@
+{
+  "name": "iv.core.feedback",
+  "version": "0.0.1",
+  "description": "Collection of gameplay feedback components",
+  "dependencies": {
+    "com.unity.inputsystem": "1.11.2"
+  }
+}
