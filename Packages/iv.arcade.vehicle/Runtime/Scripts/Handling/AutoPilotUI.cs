@@ -8,17 +8,13 @@ namespace IV.Arcade.Vehicle.Handling
     {
         private const float inputThreshold = 0.1f;
 
-        [SerializeField]
-        private Transform cameraTransform;
+        [SerializeField] private Transform navigationUi;
 
-        [SerializeField]
-        private InputActionReference joystick;
+        [SerializeField] private Transform cameraTransform;
 
-        [SerializeField]
-        private InputActionReference handbrake;
-
-        [SerializeField]
-        private InputActionReference boost;
+        [SerializeField] private InputActionReference joystick;
+        [SerializeField] private InputActionReference handbrake;
+        [SerializeField] private InputActionReference boost;
 
         private IVehicleController vehicleController;
 
@@ -78,6 +74,8 @@ namespace IV.Arcade.Vehicle.Handling
                     vehicleController.ResetSteering();
                     break;
             }
+
+            navigationUi.forward = new Vector3(worldDirection.x, 0f, worldDirection.z).normalized;
         }
     }
 }

@@ -166,7 +166,8 @@ namespace IV.Arcade.Vehicle
                 : 0f;
 
             var steeringAngle = state.steeringAxis * config.maxSteeringAngle;
-            foreach (var wheel in state.wheelsState.frontAxis) wheel.Steer(steeringAngle);
+            foreach (var wheel in state.wheelsState.frontAxis)
+                wheel.Steer(steeringAngle);
         }
 
         #endregion
