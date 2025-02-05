@@ -477,7 +477,7 @@ GameObject:
   - component: {fileID: 1489335608244848602}
   - component: {fileID: 3518386826933180787}
   - component: {fileID: 5232786148314872907}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: skin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -696,6 +696,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4434373026148205175, guid: 132e8a002f4a66d4493e0065e70550fc, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4516980660217037521, guid: 132e8a002f4a66d4493e0065e70550fc, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.4
@@ -820,7 +824,9 @@ PrefabInstance:
       propertyPath: tireScreechSound
       value: 
       objectReference: {fileID: 1542642586591025005}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2847525949359012301, guid: 132e8a002f4a66d4493e0065e70550fc, type: 3}
+    - {fileID: 6112617016551088393, guid: 132e8a002f4a66d4493e0065e70550fc, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 261786959625234688, guid: 132e8a002f4a66d4493e0065e70550fc, type: 3}

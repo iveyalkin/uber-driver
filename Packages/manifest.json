@@ -1,5 +1,9 @@
 {
   "dependencies": {
+    "iv.core.feedback": "0.0.1",
+    "iv.core.urp": "0.0.2",
+    "iv.unity-component-binder": "https://github.com/iveyalkin/roslyn-generators.git#v0.0.1",
+    "iv.arcade.vehicle": "0.0.1",
     "uber-driver.content": "0.0.1",
     "com.unity.2d.sprite": "1.0.0",
     "com.unity.ai.navigation": "2.0.5",

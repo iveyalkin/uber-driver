@@ -3,7 +3,7 @@ using UnityEngine;
 namespace iv.arcade.uberdriver
 {
     [RequireComponent(typeof(Collider))]
-    public class Pickup : MonoBehaviour
+    public partial class Pickup : MonoBehaviour
     {
         [SerializeField]
         private int score;

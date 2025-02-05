@@ -1,14 +1,12 @@
-using System;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace iv.arcade.uberdriver.ui
 {
     [RequireComponent(typeof(Text))]
-    public class ScoreCounter : MonoBehaviour
+    public partial class ScoreCounter : MonoBehaviour
     {
         [SerializeField] private Score score;
-        [SerializeField] private Text text;
 
         private void OnEnable()
         {

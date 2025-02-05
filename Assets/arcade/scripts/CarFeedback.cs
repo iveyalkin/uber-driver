@@ -5,7 +5,7 @@ using UnityEngine;
 namespace iv.arcade.uberdriver
 {
     [RequireComponent(typeof(IVehicle))]
-    public class CarFeedback : MonoBehaviour
+    public partial class CarFeedback : MonoBehaviour
     {
         [SerializeField] private Feedback feedback;
 

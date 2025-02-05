@@ -5,13 +5,11 @@ using UnityEngine.UI;
 namespace iv.arcade.uberdriver.ui
 {
     [RequireComponent(typeof(Text))]
-    public class TimerCounter : MonoBehaviour
+    public partial class TimerCounter : MonoBehaviour
     {
         private const string timerFormat = "mm':'ss";
 
         [SerializeField] private Timer timer;
-
-        [SerializeField] private Text text;
 
         private void OnEnable()
         {

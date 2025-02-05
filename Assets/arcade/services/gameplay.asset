@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: gameplay
   m_EditorClassIdentifier: 
   timer: {fileID: 11400000, guid: bbe8bd36996c7de4080fb09c34f0620a, type: 2}
+  audio: {fileID: 11400000, guid: bd960de097e67a6498e00f62a2dfdbfb, type: 2}
   onGameStateChanged:
     m_PersistentCalls:
       m_Calls: []

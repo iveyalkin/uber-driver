@@ -7,6 +7,7 @@ namespace iv.arcade.uberdriver
     public class Gameplay : ScriptableObject
     {
         [SerializeField] private Timer timer;
+        [SerializeField] private Audio audio;
 
         public UnityEvent<bool> onGameStateChanged;
         public UnityEvent<bool> onPauseChanged;
@@ -27,6 +28,7 @@ namespace iv.arcade.uberdriver
             Time.timeScale = 0;
 
             timer.Pause();
+            audio.MuteGameplay();
 
             onPauseChanged.Invoke(true);
         }
@@ -39,6 +41,7 @@ namespace iv.arcade.uberdriver
 
             Time.timeScale = originalTimeScale;
             timer.Unpause();
+            audio.UnmuteGameplay();
 
             onPauseChanged.Invoke(false);
         }

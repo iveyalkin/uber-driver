@@ -1,9 +1,12 @@
+using IV.Core.URP;
 using UnityEngine;
 
 namespace iv.arcade.uberdriver.ui
 {
     public class Windows : MonoBehaviour
     {
+        [SerializeField] private GraphicsController graphicsController;
+
         [SerializeField] private Gameplay gameplay;
 
         [SerializeField] private GameObject container;
@@ -48,6 +51,8 @@ namespace iv.arcade.uberdriver.ui
         {
             gameplay.onPauseChanged.AddListener(OnPauseChanged);
             gameplay.onGameStateChanged.AddListener(OnGameStateChanged);
+
+            OnPauseChanged(gameplay.IsPaused);
         }
 
         private void OnDisable()
@@ -68,6 +73,8 @@ namespace iv.arcade.uberdriver.ui
         {
             // todo: use canvas enable/disable + graphics raycaster to disable window without rebuilding canvas
             container.SetActive(isPaused);
+
+            graphicsController.SetFullscreenBlur(isPaused);
         }
     }
 }
